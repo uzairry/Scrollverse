@@ -1,0 +1,799 @@
+/* GLOBAL & BASIC STYLES */
+body, html { margin: 0; padding: 0; height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; background-color: #000; color: white; overflow: hidden; }
+.app-container { display: flex; height: 100vh; }
+
+/* SIDEBAR STYLES */
+.sidebar { width: 240px; padding: 20px; border-right: 1px solid #222; display: flex; flex-direction: column; background-color: #000; z-index: 10; }
+.logo-link { display: flex; align-items: center; text-decoration: none; color: white; padding: 10px 0; margin-bottom: 10px; transition: transform 0.2s ease-in-out; }
+.logo-link:hover { transform: scale(1.05); }
+.logo-icon { font-size: 32px; color: #fe2c55; margin-right: 10px; }
+.logo-text { font-family: 'Segoe UI', 'Helvetica Neue', sans-serif; font-size: 26px; font-weight: 800; letter-spacing: -1px; }
+.search-bar { position: relative; margin: 15px 0; }
+.search-bar .search-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #888; }
+.search-bar input { width: 100%; padding: 10px 15px 10px 40px; border-radius: 8px; border: 1px solid #333; background-color: #222; color: white; font-size: 16px; box-sizing: border-box; }
+.search-bar input::placeholder { color: #888; }
+.sidebar nav a { display: flex; align-items: center; padding: 6px 4px; font-size: 18px; text-decoration: none; color: white; border-radius: 4px; margin-bottom: 10px; }
+.sidebar nav a.active, .sidebar nav a:hover { background-color: rgba(255, 255, 255, 0.1); }
+.sidebar nav a i { margin-right: 15px; width: 28px; text-align: center; }
+
+/* VIDEO FEED STYLES */
+.video-feed { flex-grow: 1; position: relative; height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory; }
+.video-container { position: relative; width: 100%; height: 100vh; scroll-snap-align: start; display: flex; justify-content: center; align-items: center; background-color: #000; max-width: 580px; margin: 0 auto; }
+video {
+    width: 100%;  /* Video ko container ki poori chaurai (width) dega */
+    height: 100%; /* Video ko container ki poori unchai (height) dega */
+    object-fit: cover; /* YEH LINE MASLA HAL KAREGI */
+    border-radius: 8px;
+}
+.video-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; display: flex; justify-content: space-between; align-items: flex-end; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); }
+.video-details { flex-grow: 1; }
+.video-details h3 { font-size: 16px; font-weight: 700; margin: 0; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+.video-details p { font-size: 14px; margin-top: 5px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+.video-actions { display: flex; flex-direction: column; align-items: center; }
+.action-button { display: flex; flex-direction: column; align-items: center; margin-bottom: 20px; cursor: pointer; font-size: 14px; }
+.action-button i { font-size: 30px; margin-bottom: 5px; transition: color 0.2s, transform 0.2s; }
+.action-button .fa-heart.liked { color: #fe2c55; transform: scale(1.1); }
+.creator-profile-pic { position: relative; margin-bottom: 25px; }
+.creator-profile-pic img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid white; object-fit: cover; }
+.follow-plus-icon { position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; background-color: #fe2c55; color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 16px; font-weight: bold; border: 1px solid #000; }
+
+/* PROFILE PAGE STYLES */
+.profile-main { flex-grow: 1; padding: 30px 60px; color: white; }
+.profile-header { display: flex; align-items: center; margin-bottom: 20px; }
+.profile-pic img { width: 116px; height: 116px; border-radius: 50%; margin-right: 40px; object-fit: cover; }
+.profile-info h2 { font-size: 20px; font-weight: 700; }
+.profile-info h1 { font-size: 18px; font-weight: 600; margin: 4px 0 16px 0; }
+.profile-actions { display: flex; align-items: center; gap: 8px; }
+.edit-profile-btn { background-color: #fe2c55; color: white; padding: 8px 24px; font-weight: 600; border-radius: 4px; border: none; cursor: pointer; transition: background-color 0.2s; }
+.edit-profile-btn:hover { background-color: #e42a4f; }
+.action-icon-btn { background: transparent; border: 1px solid rgba(255, 255, 255, 0.2); color: white; width: 36px; height: 36px; border-radius: 4px; font-size: 18px; cursor: pointer; }
+.profile-stats { display: flex; gap: 20px; }
+.profile-bio { margin: 16px 0; color: rgba(255, 255, 255, 0.9); font-size: 16px; }
+.profile-tabs { display: flex; border-bottom: 1px solid #333; margin-bottom: 20px; }
+.profile-tabs .tab { padding: 15px 0; margin-right: 40px; text-decoration: none; color: #999; font-weight: bold; position: relative; border-bottom: 2px solid transparent; }
+.profile-tabs .tab.active { color: white; border-bottom-color: white; }
+.profile-tabs .tab i { margin-right: 6px; }
+.video-section-header { display: flex; justify-content: flex-end; margin-bottom: 16px; }
+.video-filter { display: flex; background-color: rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 2px; }
+.filter-option { background-color: transparent; border: none; color: rgba(255, 255, 255, 0.7); padding: 6px 16px; border-radius: 5px; font-weight: 600; cursor: pointer; }
+.filter-option.active { background-color: rgba(255, 255, 255, 0.2); color: white; }
+.empty-grid-message { text-align: center; }
+.empty-grid-icon { width: 90px; height: 90px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.08); display: flex; justify-content: center; align-items: center; margin: 0 auto 24px auto; }
+.empty-grid-icon i { font-size: 40px; color: rgba(255, 255, 255, 0.6); }
+.empty-grid-message h2 { font-size: 24px; color: rgba(255, 255, 255, 0.9); }
+
+/* FOLLOWING & EXPLORE PAGE STYLES */
+.content-main { flex-grow: 1; padding: 30px; color: white; }
+.content-main h1 { margin-bottom: 30px; }
+.follow-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+.user-card { background-color: #222; padding: 20px; border-radius: 8px; text-align: center; }
+.user-card img { width: 100px; height: 100px; border-radius: 50%; margin-bottom: 15px; }
+.user-card h3 { margin: 0 0 5px 0; }
+.user-card p { margin: 0 0 15px 0; color: #999; }
+.user-card button { background-color: #fe2c55; color: white; padding: 10px 30px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+.explore-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+.video-thumb { position: relative; cursor: pointer; }
+.video-thumb img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
+.thumb-overlay { position: absolute; bottom: 10px; left: 10px; color: white; font-weight: bold; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .left-sidebar { display: none; }
+    .video-container { max-width: 100%; }
+}
+
+/* =================================== */
+/* PROFILE PAGE FINAL & CORRECTED STYLES */
+/* =================================== */
+.profile-main {
+    flex-grow: 1;
+    padding: 30px 60px;
+    color: white;
+}
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.profile-pic img {
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+    margin-right: 40px;
+    object-fit: cover;
+}
+.profile-info h2 {
+    font-size: 20px;
+    font-weight: 700;
+}
+.profile-info h1 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 4px 0 16px 0;
+}
+.profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.edit-profile-btn {
+    background-color: #fe2c55;
+    color: white;
+    padding: 8px 24px;
+    font-weight: 600;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.edit-profile-btn:hover {
+    background-color: #e42a4f;
+}
+.action-icon-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.profile-stats {
+    display: flex;
+    gap: 20px;
+}
+.profile-bio {
+    margin: 16px 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+}
+.profile-tabs {
+    display: flex;
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+}
+.profile-tabs .tab {
+    padding: 15px 0;
+    margin-right: 40px;
+    text-decoration: none;
+    color: #999;
+    font-weight: bold;
+    position: relative;
+    border-bottom: 2px solid transparent;
+}
+.profile-tabs .tab.active {
+    color: white;
+    border-bottom-color: white;
+}
+.profile-tabs .tab i {
+    margin-right: 6px;
+}
+.video-section-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+}
+.video-filter {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 2px;
+}
+.filter-option {
+    background-color: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 6px 16px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.filter-option.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+.empty-grid-message {
+    text-align: center;
+}
+.empty-grid-icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 24px auto;
+}
+.empty-grid-icon i {
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.empty-grid-message h2 {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* =================================== */
+/* FOLLOWING & EXPLORE PAGE STYLES     */
+/* =================================== */
+.content-main {
+    flex-grow: 1;
+    padding: 30px;
+    color: white;
+}
+.content-main h1 {
+    margin-bottom: 30px;
+}
+
+/* Following Page Grid */
+.follow-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+.user-card {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+.user-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+.user-card h3 { margin: 0 0 5px 0; }
+.user-card p { margin: 0 0 15px 0; color: #999; }
+.user-card button {
+    background-color: #fe2c55;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Explore Page Grid */
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+.video-thumb {
+    position: relative;
+    cursor: pointer;
+}
+.video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+.thumb-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* =================================== */
+/* RESPONSIVE DESIGN                   */
+/* =================================== */
+@media (max-width: 768px) {
+    .left-sidebar {
+        display: none; /* Mobile par sidebar hide ho jayega */
+    }
+    .video-container {
+        max-width: 100%; /* Mobile par video poori screen le legi */
+    }
+}
+/* =================================== */
+/* PROFILE PAGE FINAL & CORRECTED STYLES */
+/* =================================== */
+
+.profile-main {
+    flex-grow: 1;
+    padding: 30px 60px;
+    color: white;
+}
+.profile-header {
+    display: flex; /* YEH LINE SAB SE ZAROORI HAI */
+    align-items: center;
+    margin-bottom: 20px;
+}
+.profile-pic img {
+    width: 116px; /* Picture ka size theek karega */
+    height: 116px;
+    border-radius: 50%; /* Picture ko gol banayega */
+    margin-right: 40px; /* Picture aur text ke beech mein jagah */
+    object-fit: cover; /* Picture ko stretch hone se bachayega */
+}
+.profile-info h2 {
+    font-size: 20px;
+    font-weight: 700;
+}
+.profile-info h1 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 4px 0 16px 0;
+}
+.profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Edit Profile Button ka naya style */
+.edit-profile-btn {
+    background-color: #fe2c55; /* Naya vibrant color */
+    color: white;
+    padding: 8px 24px;
+    font-weight: 600;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s; /* Hover effect ke liye */
+}
+.edit-profile-btn:hover {
+    background-color: #e42a4f; /* Hover par thora dark */
+}
+
+.action-icon-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.profile-stats {
+    display: flex;
+    gap: 20px;
+}
+.profile-bio {
+    margin: 16px 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+}
+.profile-tabs {
+    display: flex;
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+}
+.profile-tabs .tab {
+    padding: 15px 0;
+    margin-right: 40px;
+    text-decoration: none;
+    color: #999;
+    font-weight: bold;
+    position: relative;
+    border-bottom: 2px solid transparent;
+}
+.profile-tabs .tab.active {
+    color: white;
+    border-bottom-color: white;
+}
+.profile-tabs .tab i {
+    margin-right: 6px;
+}
+.video-section-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+}
+.video-filter {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 2px;
+}
+.filter-option {
+    background-color: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 6px 16px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.filter-option.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+.empty-grid-icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 24px auto;
+}
+.empty-grid-icon i {
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.empty-grid-message h2 {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.9);
+ text-align: center;
+}
+
+
+/* =================================== */
+/* FOLLOWING PAGE (PROFESSIONAL GRID)  */
+/* =================================== */
+
+/* Main content area ko scrollable banayein */
+.content-main {
+    height: 100vh;
+    overflow-y: auto; /* Sirf is area ko scrollable banayega */
+    box-sizing: border-box;
+}
+.content-main h1 {
+    font-size: 24px;
+}
+
+.following-grid {
+    display: grid;
+    /* Har line par 3 cards, mobile par 2 */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.follow-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden; /* Taake image bahar na nikle */
+    aspect-ratio: 9 / 16; /* Vertical video jaisi shape */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.follow-card:hover {
+    transform: scale(1.03); /* Hover par thora sa bara hoga */
+}
+
+.card-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Image poori card par fit hogi */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%, rgba(0,0,0,0.2) 100%);
+    display: flex;
+    align-items: center; /* Content ko center mein rakhega */
+    justify-content: center;
+}
+
+.card-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.card-content h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px black;
+}
+
+.card-content p {
+    margin: 4px 0 20px 0;
+    font-size: 14px;
+    opacity: 0.9;
+    text-shadow: 1px 1px 3px black;
+}
+
+.follow-btn {
+    background-color: #fe2c55;
+    color: white;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.follow-btn:hover {
+    background-color: #e42a4f;
+}
+
+.category-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    overflow-x: auto; /* Agar mobile par categories zyada hon to scroll ho sakein */
+    padding-bottom: 10px; /* Scrollbar ke liye thori jagah */
+}
+.filter-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap; /* Button ke text ko aek line mein rakhega */
+    transition: background-color 0.2s;
+}
+.filter-btn:hover {
+    background-color: #444;
+}
+.filter-btn.active {
+    background-color: white;
+    color: black;
+}
+
+/* Video Thumbnail Grid */
+.explore-grid {
+    display: grid;
+    /* Yeh aek responsive grid banayega */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.video-thumbnail {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 9 / 16; /* Vertical video jaisi shape */
+    transition: transform 0.2s ease;
+}
+
+.video-thumbnail:hover {
+    transform: scale(1.03); /* Hover par thora sa bara hoga */
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Image poori card par fit hogi */
+}
+
+.thumbnail-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+    display: flex;
+    justify-content: space-between; /* Likes aur creator ko alag alag kono mein rakhega */
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.thumbnail-stats {
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+.thumbnail-stats i {
+    margin-right: 5px;
+}
+
+.thumbnail-creator {
+    display: flex;
+    align-items: center;
+}
+
+.thumbnail-creator img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.thumbnail-creator span {
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    display: none; /* By default chupa hua hoga */
+}
+
+/* Hover par creator ka naam dikhayein */
+.video-thumbnail:hover .thumbnail-creator span {
+    display: inline;
+}
+
+/* =================================== */
+/* UPLOAD PAGE (FINAL & CORRECTED STYLES) */
+/* =================================== */
+
+.upload-page {
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 50px;
+    /* YEH LINE CONTENT KO CENTER KAREGI */
+    align-items: center; 
+}
+
+/* Tamam content ko aek max-width dein */
+.upload-page .upload-header,
+.upload-page form,
+.upload-page .info-section {
+    width: 100%;
+    max-width: 960px;
+}
+
+.upload-header h1 {
+    font-size: 24px;
+    margin: 0 0 30px 0;
+}
+
+/* The dashed box for uploading */
+#uploader-box {
+    border: 2px dashed #444;
+    border-radius: 8px;
+    padding: 30px;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.3s, background-color 0.3s;
+    display: flex; /* Two-column layout ke liye */
+    align-items: center;
+    gap: 30px; /* Dono columns ke beech mein jagah */
+}
+
+#uploader-box:hover {
+    border-color: #fe2c55;
+    background-color: #222;
+}
+
+/* Naye two-column layout ke styles */
+.uploader-left {
+    padding: 40px 30px;
+    border-right: 1px solid #333;
+}
+.uploader-left i {
+    font-size: 48px;
+    color: #888;
+}
+.uploader-right {
+    text-align: left;
+}
+.uploader-right h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #fff;
+}
+.uploader-right p {
+    margin: 0 0 20px 0;
+    color: #888;
+}
+.select-btn {
+    background-color: #fe2c55;
+    color: white;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+/* Form Details (after selecting a file) */
+#form-details {
+    display: none;
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+#fileNameDisplay {
+    background: #282828;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    color: #eee;
+    font-weight: bold;
+    border-left: 3px solid #fe2c55;
+}
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: #aaa; }
+.form-group input[type="text"] { width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #444; background: #282828; color: #fff; box-sizing: border-box; font-size: 16px; }f
+
+/* Info section at the bottom */
+.info-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    text-align: left;
+    color: #aaa;
+}
+.info-item h4 { margin: 0 0 8px 0; font-size: 14px; color: #fff; display: flex; align-items: center; }
+.info-item i { margin-right: 10px; font-size: 16px; }
+.info-item p { margin: 0; font-size: 13px; line-height: 1.5; }
+
+/* =================================== */
+/* PROFILE PAGE - DYNAMIC VIDEO GRID STYLES */
+/* =================================== */
+
+.profile-video-grid {
+    display: grid;
+    /* Creates a responsive grid that adjusts the number of columns */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+    gap: 15px;
+}
+
+.profile-video-thumb {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 9 / 16; /* Maintains a vertical video shape */
+    background-color: #222;
+}
+
+.profile-video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumb-stats {
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.thumb-stats i {
+    margin-right: 5px;
+}
+
+/* =================================== */
+/* EXPLORE PAGE - BUTTON HOVER EFFECT  */
+/* =================================== */
+
+.filter-btn:not(.active):hover {
+    background-color: #444; /* Sirf un buttons ka color badle jo active nahi hain */
+}

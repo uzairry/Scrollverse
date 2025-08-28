@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Video | ScrollVerse</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar left-sidebar">
+            <div class="logo">
+                <a href="/" class="logo-link">
+                    <i class="fas fa-play-circle logo-icon"></i>
+                    <span class="logo-text">ScrollVerse</span>
+                </a>
+            </div>
+            <div class="search-bar">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Search">
+            </div>
+            <nav>
+                <a href="index.html"><i class="fas fa-home"></i> <span>For You</span></a>
+                <a href="explore.html"><i class="fas fa-compass"></i> <span>Explore</span></a>
+                <a href="following.html"><i class="fas fa-users"></i> <span>Following</span></a>
+                <a href="friends.html"><i class="fas fa-user-friends"></i> <span>Friends</span></a>
+                <a href="#"><i class="fas fa-video"></i> <span>LIVE</span></a>
+                <a href="#"><i class="far fa-paper-plane"></i> <span>Messages</span></a>
+                <a href="#"><i class="far fa-bell"></i> <span>Activity</span></a>
+                <a href="upload.html" class="active"><i class="fas fa-upload"></i> <span>Upload</span></a>
+                <a href="profile.html"><i class="fas fa-user"></i> <span>Profile</span></a>
+                <a href="#"><i class="fas fa-ellipsis-h"></i> <span>More</span></a>
+            </nav>
+        </div>
+
+        <!-- Main Upload Area -->
+        <main class="content-main upload-page">
+            <div class="upload-header">
+                <h1>Upload Video</h1>
+            </div>
+
+            <form action="/api/upload" method="POST" enctype="multipart/form-data" id="uploadForm">
+                <!-- Uploader Box (Step 1) -->
+                <label for="videoFile" id="uploader-box">
+                    <!-- Naya Two-Column Layout -->
+                    <div class="uploader-left">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <div class="uploader-right">
+                        <h2>Select video to upload</h2>
+                        <p>Or drag and drop a file</p>
+                        <div class="select-btn">Select video</div>
+                    </div>
+                </label>
+
+                <!-- Hidden file input -->
+                <input type="file" id="videoFile" name="videoFile" required style="display: none;">
+
+                <!-- Form Details (Step 2 - Initially hidden) -->
+                <div id="form-details">
+                    <h3>Your Video Details:</h3>
+                    <div id="fileNameDisplay"></div>
+                    <div class="form-group">
+                        <label for="creator">Your Name (Creator):</label>
+                        <input type="text" id="creator" name="creator" placeholder="@yourname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Video Description:</label>
+                        <input type="text" id="description" name="description" placeholder="Write something about your video..." required>
+                    </div>
+                    <button type="submit" class="select-btn">Upload and Post</button>
+                </div>
+            </form>
+
+            <!-- Info Section at the bottom -->
+            <div class="info-section">
+                <div class="info-item"><h4><i class="fa-solid fa-ruler-combined"></i> Size and duration</h4><p>Maximum size: 30 GB, video duration: 60 minutes.</p></div>
+                <div class="info-item"><h4><i class="fa-solid fa-file-lines"></i> File formats</h4><p>Recommended: ".mp4". Other major formats are supported.</p></div>
+                <div class="info-item"><h4><i class="fa-solid fa-video"></i> Video resolutions</h4><p>High-resolution recommended: 1080p, 1440p, 4K.</p></div>
+                <div class="info-item"><h4><i class="fa-solid fa-object-group"></i> Aspect ratios</h4><p>Recommended: 16:9 for landscape, 9:16 for vertical.</p></div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const videoFileInput = document.getElementById('videoFile');
+        const uploaderBox = document.getElementById('uploader-box');
+        const formDetails = document.getElementById('form-details');
+        const fileNameDisplay = document.getElementById('fileNameDisplay');
+
+        videoFileInput.addEventListener('change', () => {
+            if (videoFileInput.files.length > 0) {
+                const fileName = videoFileInput.files[0].name;
+                fileNameDisplay.textContent = `Selected File: ${fileName}`;
+                uploaderBox.style.display = 'none';
+                formDetails.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

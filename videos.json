@@ -1,0 +1,346 @@
+[
+  {
+    "id": 1,
+    "creator": "@natureLover",
+    "description": "Soothing waves...",
+    "videoUrl": "/videos/video1.mp4",
+    "thumbnailUrl": "/images/video1-thumb.jpg",
+    "category": "Travel",
+    "likes": "1.2M",
+    "comments": "5480"
+  },
+  {
+    "id": 2,
+    "creator": "@cityVibes",
+    "description": "City lights...",
+    "videoUrl": "/videos/video2.mp4",
+    "thumbnailUrl": "/images/video2-thumb.jpg",
+    "category": "Travel",
+    "likes": "850K",
+    "comments": "3200"
+  },
+  {
+    "id": 3,
+    "creator": "@foodieFinds",
+    "description": "Making the perfect pizza!",
+    "videoUrl": "/videos/video3.mp4",
+    "thumbnailUrl": "/images/video3-thumb.jpg",
+    "category": "Food",
+    "likes": "2.5M",
+    "comments": "9800"
+  },
+  {
+    "id": 4,
+    "creator": "@petAdventures",
+    "description": "My dog's funny moments",
+    "videoUrl": "/videos/video4.mp4",
+    "thumbnailUrl": "/images/video4-thumb.jpg",
+    "category": "Animals",
+    "likes": "975K",
+    "comments": "4100"
+  },
+  {
+    "id": 5,
+    "creator": "@artWorld",
+    "description": "Time-lapse painting",
+    "videoUrl": "/videos/video5.mp4",
+    "thumbnailUrl": "/images/video5-thumb.jpg",
+    "category": "Art",
+    "likes": "1.8M",
+    "comments": "7600"
+  },
+  {
+    "id": 6,
+    "creator": "@danceFever",
+    "description": "New dance challenge!",
+    "videoUrl": "/videos/video6.mp4",
+    "thumbnailUrl": "/images/video6-thumb.jpg",
+    "category": "Singing & Dancing",
+    "likes": "3.1M",
+    "comments": "12K"
+  },
+  {
+    "id": 7,
+    "creator": "@techGuru",
+    "description": "Unboxing the latest gadget",
+    "videoUrl": "/videos/video7.mp4",
+    "thumbnailUrl": "/images/video7-thumb.jpg",
+    "category": "Tech",
+    "likes": "550K",
+    "comments": "2100"
+  },
+  {
+    "id": 8,
+    "creator": "@travelBug",
+    "description": "Exploring the mountains",
+    "videoUrl": "/videos/video8.mp4",
+    "thumbnailUrl": "/images/video8-thumb.jpg",
+    "category": "Travel",
+    "likes": "2.2M",
+    "comments": "8900"
+  },
+  {
+    "id": 9,
+    "creator": "@comedyKing",
+    "description": "Just a funny skit",
+    "videoUrl": "/videos/video9.mp4",
+    "thumbnailUrl": "/images/video9-thumb.jpg",
+    "category": "Comedy",
+    "likes": "4.5M",
+    "comments": "15K"
+  },
+  {
+    "id": 10,
+    "creator": "@fitLife",
+    "description": "Quick workout routine",
+    "videoUrl": "/videos/video10.mp4",
+    "thumbnailUrl": "/images/video10-thumb.jpg",
+    "category": "Sports",
+    "likes": "780K",
+    "comments": "3500"
+  },
+  {
+    "id": 11,
+    "creator": "@musicMania",
+    "description": "Playing a classic song",
+    "videoUrl": "/videos/video11.mp4",
+    "thumbnailUrl": "/images/video11-thumb.jpg",
+    "category": "Singing & Dancing",
+    "likes": "1.9M",
+    "comments": "8100"
+  },
+  {
+    "id": 12,
+    "creator": "@carFanatic",
+    "description": "Reviewing a new car",
+    "videoUrl": "/videos/video12.mp4",
+    "thumbnailUrl": "/images/video12-thumb.jpg",
+    "category": "Tech",
+    "likes": "990K",
+    "comments": "4800"
+  },
+  {
+    "id": 13,
+    "creator": "@creativeSoul",
+    "description": "A simple DIY project",
+    "videoUrl": "/videos/video13.mp4",
+    "thumbnailUrl": "/images/video13-thumb.jpg",
+    "category": "Art",
+    "likes": "650K",
+    "comments": "2800"
+  },
+  {
+    "id": 16,
+    "creator": "@natureLover",
+    "description": "Soothing waves...",
+    "videoUrl": "/videos/video1.mp4",
+    "thumbnailUrl": "/images/video1-thumb.jpg",
+    "category": "Travel",
+    "likes": "1.2M",
+    "comments": "5480"
+  },
+  {
+    "id": 17,
+    "creator": "@cityVibes",
+    "description": "City lights...",
+    "videoUrl": "/videos/video2.mp4",
+    "thumbnailUrl": "/images/video2-thumb.jpg",
+    "category": "Travel",
+    "likes": "850K",
+    "comments": "3200"
+  },
+  {
+    "id": 18,
+    "creator": "@foodieFinds",
+    "description": "Making the perfect pizza!",
+    "videoUrl": "/videos/video3.mp4",
+    "thumbnailUrl": "/images/video3-thumb.jpg",
+    "category": "Food",
+    "likes": "2.5M",
+    "comments": "9800"
+  },
+  {
+    "id": 19,
+    "creator": "@petAdventures",
+    "description": "My dog's funny moments",
+    "videoUrl": "/videos/video4.mp4",
+    "thumbnailUrl": "/images/video4-thumb.jpg",
+    "category": "Animals",
+    "likes": "975K",
+    "comments": "4100"
+  },
+  {
+    "id": 20,
+    "creator": "@artWorld",
+    "description": "Time-lapse painting",
+    "videoUrl": "/videos/video5.mp4",
+    "thumbnailUrl": "/images/video5-thumb.jpg",
+    "category": "Art",
+    "likes": "1.8M",
+    "comments": "7600"
+  },
+  {
+    "id": 21,
+    "creator": "@danceFever",
+    "description": "New dance challenge!",
+    "videoUrl": "/videos/video6.mp4",
+    "thumbnailUrl": "/images/video6-thumb.jpg",
+    "category": "Singing & Dancing",
+    "likes": "3.1M",
+    "comments": "12K"
+  },
+  {
+    "id": 22,
+    "creator": "@techGuru",
+    "description": "Unboxing the latest gadget",
+    "videoUrl": "/videos/video7.mp4",
+    "thumbnailUrl": "/images/video7-thumb.jpg",
+    "category": "Tech",
+    "likes": "550K",
+    "comments": "2100"
+  },
+  {
+    "id": 23,
+    "creator": "@travelBug",
+    "description": "Exploring the mountains",
+    "videoUrl": "/videos/video8.mp4",
+    "thumbnailUrl": "/images/video8-thumb.jpg",
+    "category": "Travel",
+    "likes": "2.2M",
+    "comments": "8900"
+  },
+  {
+    "id": 25,
+    "creator": "@musicMania",
+    "description": "Playing a classic song",
+    "videoUrl": "/videos/video11.mp4",
+    "thumbnailUrl": "/images/video11-thumb.jpg",
+    "category": "Singing & Dancing",
+    "likes": "1.9M",
+    "comments": "8100"
+  },
+  {
+    "id": 26,
+    "creator": "@carFanatic",
+    "description": "Reviewing a new car",
+    "videoUrl": "/videos/video12.mp4",
+    "thumbnailUrl": "/images/video12-thumb.jpg",
+    "category": "Tech",
+    "likes": "990K",
+    "comments": "4800"
+  },
+  {
+    "id": 27,
+    "creator": "@creativeSoul",
+    "description": "A simple DIY project",
+    "videoUrl": "/videos/video13.mp4",
+    "thumbnailUrl": "/images/video13-thumb.jpg",
+    "category": "Art",
+    "likes": "650K",
+    "comments": "2800"
+  },
+ {
+    "id": 28,
+    "creator": "@musicMania",
+    "description": "Playing a classic song",
+    "videoUrl": "/videos/video31.mp4",
+    "thumbnailUrl": "/images/video31-thumb.jpg",
+    "category": "Singing & Dancing",
+    "likes": "1.1M",
+    "comments": "5600"
+  },
+ {
+    "id": 24,
+    "creator": "@comedyKing",
+    "description": "Just a funny skit",
+    "videoUrl": "/videos/video9.mp4",
+    "thumbnailUrl": "/images/video9-thumb.jpg",
+    "category": "Comedy",
+    "likes": "4.5M",
+    "comments": "15K"
+  },
+  {
+    "id": 25,
+    "creator": "@fitLife",
+    "description": "Quick workout routine",
+    "videoUrl": "/videos/video10.mp4",
+    "thumbnailUrl": "/images/video10-thumb.jpg",
+    "category": "Sports",
+    "likes": "780K",
+    "comments": "3500"
+  },
+ {
+    "id": 29,
+    "creator": "@musicMania",
+    "description": "Playing a classic song",
+    "videoUrl": "/videos/video32.mp4",
+    "thumbnailUrl": "/images/video32-thumb.jpg",
+    "category": "Singing & Dancing",
+    "likes": "1.4M",
+    "comments": "3100"
+  },
+ {
+    "id": 30,
+    "creator": "@musicMania",
+    "description": "Playing a classic song",
+    "videoUrl": "/videos/video33.mp4",
+    "thumbnailUrl": "/images/video33-thumb.jpg",
+    "category": "Singing & Dancing",
+    "likes": "1.6M",
+    "comments": "6100"
+  },
+ {
+    "id": 31,
+    "creator": "@musicMania",
+    "description": "Playing a classic song",
+    "videoUrl": "/videos/video34.mp4",
+    "thumbnailUrl": "/images/video34-thumb.jpg",
+    "category": "Singing & Dancing",
+    "likes": "1.9M",
+    "comments": "8800"
+  },
+ {
+    "id": 32,
+    "creator": "@musicMania",
+    "description": "Playing a classic song",
+    "videoUrl": "/videos/video35.mp4",
+    "thumbnailUrl": "/images/video35-thumb.jpg",
+    "category": "Singing & Dancing",
+    "likes": "1.2M",
+    "comments": "8100"
+  },
+ {
+    "id": 33,
+    "creator": "@musicMania",
+    "description": "Playing a classic song",
+    "videoUrl": "/videos/video36.mp4",
+    "thumbnailUrl": "/images/video36-thumb.jpg",
+    "category": "Singing & Dancing",
+    "likes": "1.9M",
+    "comments": "8100"
+  },
+  {
+    "id": 1756317707213,
+    "creator": "uzair.ch123",
+    "description": "this video is about nature",
+      "videoUrl": "/videos/video1.mp4",
+     "thumbnailUrl": "/images/video1-thumb.jpg",
+    "creatorAvatarUrl": "https://placehold.co/50x50/fe2c55/white?text=U",
+    "likes": "0",
+    "comments": "0",
+    "saves": "0",
+    "shares": "0"
+  },
+  {
+    "id": 1756318673465,
+    "creator": "uzair.ch123",
+    "description": "this video is about nature",
+    "videoUrl": "/videos/videoFile-1756318673112-972813372.mp4",
+    "thumbnailUrl": "https://placehold.co/300x500/222/fff?text=New+Video",
+    "creatorAvatarUrl": "https://placehold.co/50x50/fe2c55/white?text=U",
+    "likes": "0",
+    "comments": "0",
+    "saves": "0",
+    "shares": "0"
+  }
+]
